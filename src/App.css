@@ -34,6 +34,10 @@ body {
   padding: 95px 0;
 }
 
+.App.loggedOut main {
+  padding: 0;
+}
+
 main {
   overflow-y: scroll;
   display: flex;

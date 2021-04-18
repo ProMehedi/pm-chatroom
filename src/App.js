@@ -14,10 +14,14 @@ const App = () => {
   }
 
   return (
-    <div className='App'>
+    <div className={`App ${auth.currentUser ? 'loggedIn' : 'loggedOut'}`}>
       <header>
         <h1>⚛️🔥💬</h1>
-        <SignOut />
+        {auth.currentUser ? (
+          <SignOut />
+        ) : (
+          <h3>Please Login to join the Chatroom</h3>
+        )}
       </header>
       <main>{user ? <ChatRoom /> : <SignIn login={signInWithGoogle} />}</main>
     </div>

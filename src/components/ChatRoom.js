@@ -24,8 +24,11 @@ const ChatRoom = () => {
       photoURL: photoURL ? photoURL : '',
     }
 
+    if (formValue === '') {
+      return false
+    }
+
     await messagesRef.add(message)
-    console.log(message)
 
     setFormValue('')
 
@@ -46,7 +49,9 @@ const ChatRoom = () => {
           value={formValue}
           onChange={(e) => setFormValue(e.target.value)}
         />
-        <button type='submit'>Send</button>
+        <button type='submit' disabled={formValue === '' ? true : false}>
+          Send
+        </button>
       </form>
     </>
   )

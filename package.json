@@ -1,5 +1,5 @@
 {
-  "name": "rb-chat",
+  "name": "pm-chatroom",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
